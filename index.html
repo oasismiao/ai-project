@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>风格实验室 - 探索无限时尚可能</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5b13ec",
+                        "background-light": "#ffffff",
+                        "background-dark": "#161022",
+                        "accent-pink": "#ff3e8d",
+                        "accent-cyan": "#00f0ff",
+                        "accent-lime": "#d4ff00",
+                        "accent-orange": "#ff8a00"
+                    },
+                    fontFamily: {
+                        "sans": ["'Noto Sans SC'", "sans-serif"],
+                        "serif": ["'Noto Serif SC'", "serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    animation: {
+                        "spin-slow": "spin 8s linear infinite",
+                        "fade-in-up": "fade-in-up 0.5s ease-out forwards",
+                        "scan": "scan 3s ease-in-out infinite"
+                    },
+                    keyframes: {
+                        "fade-in-up": {
+                            "0%": { opacity: "0", transform: "translateY(20px) translateX(-50%)" },
+                            "100%": { opacity: "1", transform: "translateY(0) translateX(-50%)" }
+                        },
+                        "scan": {
+                            "0%": { top: "0%" },
+                            "50%": { top: "100%" },
+                            "100%": { top: "0%" }
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Noto Sans SC', sans-serif; letter-spacing: -0.01em; }
+        .songti-style { font-family: 'Noto Serif SC', serif; }
+        .organic-blob { filter: blur(60px); opacity: 0.25; z-index: 0; pointer-events: none; }
+        .oil-stroke { stroke-dasharray: 1000; stroke-dashoffset: 0; opacity: 0.3; pointer-events: none; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .masonry-grid { column-count: 3; column-gap: 1.5rem; }
+        @media (max-width: 1024px) { .masonry-grid { column-count: 2; } }
+        @media (max-width: 640px) { .masonry-grid { column-count: 1; } }
+        .masonry-item { break-inside: avoid; margin-bottom: 1.5rem; }
+        @keyframes pulse-soft {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.7; }
+        }
+        .animate-pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-background-light min-h-screen text-slate-900 overflow-x-hidden">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

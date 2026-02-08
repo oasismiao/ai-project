@@ -1,0 +1,7 @@
+{
+  "name": "风格实验室 (Style Lab)",
+  "description": "A high-end AI-powered fashion exploration platform allowing users to design hairstyles, makeup, accessories, and scenes, generating a personalized fitting report with photorealistic AI model preview.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
